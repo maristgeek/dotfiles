@@ -76,3 +76,6 @@ fi
 
 # apple wireless scan
 alias wifiscan='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport scan'
+
+# remove color output in bash
+alias decolor='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
