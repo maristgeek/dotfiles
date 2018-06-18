@@ -5,7 +5,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 
 
 ## How to use
-1. Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/dotfiles`
+1. Clone repo: `git clone git@github.com:maristgeek/dotfiles.git ~/dotfiles`
 2. `cd ~/dotfiles`
 3. `setup-new-machine.sh`
 4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
@@ -42,6 +42,8 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 
 ## Thanks to...
 Lots of this content taken from various people, but particularly
+
+[bdashrad](https://github.com/bdashrad/dotfiles/)
 
 [paulirish](https://github.com/paulirish/dotfiles/)
 
