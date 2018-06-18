@@ -538,6 +538,9 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 # defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 # defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
+# Make ⌘ + k search the web in Chrome
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Search the Web..." "@k"
+
 ###############################################################################
 # Spectacle.app                                                               #
 ###############################################################################
