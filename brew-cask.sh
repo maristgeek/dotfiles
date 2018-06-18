@@ -49,7 +49,6 @@ brew cask install skype
 brew cask install slack
 
 # development
-brew cask install atom
 brew cask install iterm2
 # brew cask install menumeters
 brew cask install kdiff3
@@ -64,8 +63,6 @@ brew cask install visual-studio-code
 
 # multimedia
 # brew cask install exiftool
-brew cask install gyazo
-# brew cask install lastfm
 brew cask install skitch
 brew cask install spotify
 brew cask install vlc
