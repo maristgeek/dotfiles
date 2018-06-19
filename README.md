@@ -1,4 +1,4 @@
-brad's dotfiles
+maristgeeks's dotfiles
 ===============
 
 Manage dotfiles, configs, etc using bash, gnu stow, and more.

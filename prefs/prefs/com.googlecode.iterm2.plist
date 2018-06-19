@@ -662,7 +662,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/bradclark</string>
+			<string>/Users/benstoutenburgh</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -1253,7 +1253,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/bradclark</string>
+			<string>/Users/benstoutenburgh</string>
 		</dict>
 	</array>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -1302,7 +1302,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/bradclark/prefs</string>
+	<string>/Users/benstoutenburgh/prefs</string>
 	<key>SGTRecentFileSearches</key>
 	<array>
 		<dict>

@@ -1,8 +1,8 @@
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
 # but customized to me. <3
 
-#default_username='bradclark'
-default_username=${USERNAME:-bradclark}
+#default_username='benstoutenburgh'
+default_username=${USERNAME:-benstoutenburgh}
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=2

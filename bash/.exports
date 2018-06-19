@@ -42,10 +42,10 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export NVM_DIR="$HOME/.nvm"
 
 # CPAN Stuff
-export PERL5LIB="/Users/bradclark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
-export PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
-export PERL_MB_OPT='--install_base "/Users/bradclark/perl5"';
-export PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5";
+export PERL5LIB="/Users/benstoutenburgh/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
+export PERL_LOCAL_LIB_ROOT="/Users/benstoutenburgh/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
+export PERL_MB_OPT='--install_base "/Users/benstoutenburgh/perl5"';
+export PERL_MM_OPT="INSTALL_BASE=/Users/benstoutenburgh/perl5";
 
 ###
 # PATH
@@ -61,7 +61,7 @@ PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 PATH="$PATH:/usr/local/heroku/bin"
 
 # CPAN
-PATH="$PATH:/Users/bradclark/perl5/bin"
+PATH="$PATH:/Users/benstoutenburgh/perl5/bin"
 
 # set PATH so it includes user's private bin if it exists
 [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
