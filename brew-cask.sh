@@ -17,8 +17,8 @@ brew tap buo/cask-upgrade
 # TODO: look into
 ## always
 # brew cask install alfred
+# brew cask install amphetamine
 # brew cask install bettertouchtool
-# brew cask install caffeine
 # brew cask install karabiner
 # brew cask install rescuetime
 # brew cask install stay
