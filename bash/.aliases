@@ -77,3 +77,5 @@ alias setdns="networksetup -setdnsservers Wi-Fi 2606:4700:4007::1001 2606:4700:4
 # homebrew
 alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
 alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
+
+alias grep='grep --colour=auto'
