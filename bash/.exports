@@ -79,3 +79,6 @@ export PATH
 # github.com/trapd00r/LS_COLORS
 command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
 eval "$(gdircolors -b ~/.dircolors)"
+
+# Ignore .DS_Store files in filename completion
+export FIGNORE="${FIGNORE}:DS_Store"
