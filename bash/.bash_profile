@@ -100,6 +100,7 @@ fi
 [[ -s "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # system bash completion
+# this will also get local completion scripts stored in ${HOME}/.bash_completion.d if using .bash_complete
 [[ -f "/etc/bash_completion" ]] && . /etc/bash_completion
 
 # enable homebrew bash_completion
@@ -114,7 +115,8 @@ fi
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults
+# commented out in favor of downloading http://brettterpstra.com/2012/06/16/bash-completion-for-defaults-domains/
+# complete -W "NSGlobalDomain" defaults
 
 # travis completion
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
