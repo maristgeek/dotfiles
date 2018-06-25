@@ -113,6 +113,9 @@ fi
 # enable hugo completion
 [[ -f "$HOME/.hugo/hugo.sh" ]] && . "$HOME/.hugo/hugo.sh"
 
+# enable rvm completion
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 # commented out in favor of downloading http://brettterpstra.com/2012/06/16/bash-completion-for-defaults-domains/
