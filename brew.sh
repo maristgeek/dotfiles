@@ -77,6 +77,8 @@ brew install logstalgia
 brew install ansible
 brew install terraform
 brew install vault
+brew tap wata727/tflint
+brew install tflint
 
 # Install everything else
 brew install aws-elasticbeanstalk
