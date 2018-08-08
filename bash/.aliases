@@ -79,3 +79,4 @@ alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
 alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
 
 alias grep='grep --colour=auto'
+alias egrep='egrep --color=auto'
