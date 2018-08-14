@@ -59,9 +59,12 @@ brew install go
 brew install heroku
 brew install hub
 brew install jq
+brew install jsonlint
 brew install node
 brew install openssl@1.1
 brew install python
+brew install shyaml
+brew install yamllint
 
 # network stuff
 brew install grepcidr
