@@ -63,6 +63,7 @@ brew install jsonlint
 brew install node
 brew install openssl@1.1
 brew install python
+brew install shellcheck
 brew install shyaml
 brew install yamllint
 
@@ -108,9 +109,6 @@ brew install pinentry-mac
 brew install p7zip
 brew install unrar
 brew install xz
-
-# Install some linters
-brew install shellcheck
 
 # Remove outdated versions from the cellar
 brew cleanup
