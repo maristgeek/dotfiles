@@ -96,7 +96,7 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 ##
-## Competion
+## Completion
 ##
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
