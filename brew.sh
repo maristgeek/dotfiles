@@ -56,7 +56,6 @@ brew install automake
 brew install gist
 brew install git
 brew install go
-brew install heroku
 brew install hub
 brew install jq
 brew install jsonlint
