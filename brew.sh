@@ -78,12 +78,12 @@ brew install logstalgia
 
 # infra management
 brew install ansible
-brew install terraform
 brew install vault
 brew tap wata727/tflint
 brew install tflint
 
 # Install everything else
+brew install asdf
 brew install aws-elasticbeanstalk
 brew install awscli
 brew install bat
