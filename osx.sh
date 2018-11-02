@@ -97,7 +97,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Faster tooltip display delay
-defaults write -g NSInitialToolTipDelay -int 500
+defaults write NSGlobalDomain NSInitialToolTipDelay -int 500
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
