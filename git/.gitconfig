@@ -67,7 +67,7 @@
 	smudge = git media smudge %f
 
 [help]
-  autocorrect = 50
+  autocorrect = 5
 
 [merge]
   tool = p4merge
