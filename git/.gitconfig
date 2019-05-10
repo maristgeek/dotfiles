@@ -2,9 +2,11 @@
   # shorten some commonly used commands
   st = status
 
+  # https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lgg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --name-only
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
   ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
   ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
@@ -44,22 +46,23 @@
   attributesfile = ~/.gitattributes
 
 # git diff
-[diff]
-  tool = p4merge
+# commented out until I explore my options and setup for both mac and linux
+# [diff]
+#   tool = p4merge
 
-[difftool]
-  prompt = false
+# [difftool]
+#   prompt = false
 
-[difftool "kdiff3"]
-  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-  trustExitCode = false]
+# [difftool "kdiff3"]
+#   path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+#   trustExitCode = false]
 
-[difftool "opendiff"]
-  path = /usr/bin/opendiff
-  trustExitCode = false
+# [difftool "opendiff"]
+#   path = /usr/bin/opendiff
+#   trustExitCode = false
 
-[difftool "p4merge"]
-  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
+# [difftool "p4merge"]
+#   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
 
 [filter "media"]
 	required = true
@@ -69,25 +72,26 @@
 [help]
   autocorrect = 5
 
-[merge]
-  tool = p4merge
-  prompt = false
+# commented out until I explore my options and setup for both mac and linux
+# [merge]
+#   tool = p4merge
+#   prompt = false
 
-[mergetool]
-  keepTemporaries = false
-  keepBackup = false
+# [mergetool]
+#   keepTemporaries = false
+#   keepBackup = false
 
-[mergetool "kdiff3"]
-  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-  trustExitCode = false
+# [mergetool "kdiff3"]
+#   path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+#   trustExitCode = false
 
-[mergetool "opendiff"]
-  cmd = /usr/bin/opendiff "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
-  trustExitCode = false
+# [mergetool "opendiff"]
+#   cmd = /usr/bin/opendiff "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+#   trustExitCode = false
 
-[mergetool "p4merge"]
-  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  trustExitCode = false
+# [mergetool "p4merge"]
+#   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+#   trustExitCode = false
 
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
