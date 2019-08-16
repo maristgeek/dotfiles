@@ -30,11 +30,6 @@ brew install grc
 # Install wget with IRI support
 brew install wget --with-iri
 
-# Install r
-brew tap homebrew/science
-brew install r
-mkdir -p ~/Library/R/3.2/library
-
 # Install more recent versions of some OS X tools
 brew install vim --with-override-system-vi
 brew install grep --default-names
