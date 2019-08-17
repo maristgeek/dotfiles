@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=1090
+true
+
+BREWPATH=$(brew --prefix)
+export BREWPATH
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{extra,path,exports,aliases,functions,bash_prompt}; do
-  [ -f "$file" ] && [ -r "$file" ] && . "$file"
+for file in ${HOME}/.{path,exports,aliases,functions,bash_prompt}; do
+  [ -r "$file" ] && . "$file"
 done
 unset file
-
-# to help sublimelinter etc with finding my PATHS
-case $- in
-  *i*) source ~/.extra
-esac
-
-BREWPATH=$(brew --prefix)
 
 # highlighting inside manpages and elsewhere
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -50,77 +49,47 @@ bind Space:magic-space
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Load the default .profile
-[[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
+# [ -s "$HOME/.profile" ] && . "$HOME/.profile"
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
 
 # z beats cd most of the time.
 #  github.com/rupa/z
-[[ -s "${BREWPATH}/etc/profile.d/z.sh" ]] && . "${BREWPATH}/etc/profile.d/z.sh"
+[ -s "${BREWPATH}/etc/profile.d/z.sh" ] && . "${BREWPATH}/etc/profile.d/z.sh"
 
 # grc colorizing
-[[ -e "${BREWPATH}/etc/grc.bashrc" ]] && . "${BREWPATH}/etc/grc.bashrc"
-
-# generic colouriser
-GRC=$(which grc)
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-  then
-    alias colourify="$GRC -es --colour=auto"
-    alias configure='colourify ./configure'
-    for app in {diff,make,gcc,g++,ping,traceroute}; do
-      alias "$app"='colourify '$app
-  done
-fi
+[ -e "${BREWPATH}/etc/grc.bashrc" ] && . "${BREWPATH}/etc/grc.bashrc"
 
 # include .bashrc if it exists
 #[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
 # set up fzf keybindings
-[ -f ~/.fzf.bash ] && . ~/.fzf.bash
-
-# use local folder for CPAN instead of homebrew cellar
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
-
-# Start GPG agent
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  . ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-  GPG_TTY=$(tty)
-  export GPG_TTY
-else
-  eval $(gpg-agent --daemon)
-fi
+[ -f "${HOME}/.fzf.bash" ] && . "${HOME}/.fzf.bash"
 
 # iTerm2 Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # asdf
-source /usr/local/opt/asdf/asdf.sh
+[ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && source "${BREWPATH}/opt/asdf/asdf.sh"
 
 ##
 ## Completion
 ##
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[[ -s "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
-
 # system bash completion
 # this will also get local completion scripts stored in ${HOME}/.bash_completion.d if using .bash_complete
-[[ -f "/etc/bash_completion" ]] && . /etc/bash_completion
+[ -f "/etc/bash_completion" ] && . /etc/bash_completion
 
 # enable homebrew bash_completion
-[[ -f "${BREWPATH}/etc/bash_completion" ]] && . "${BREWPATH}/etc/bash_completion"
-#[[ -e "${BREWPATH}/share/bash-completion/bash_completion" ]] && . "${BREWPATH}/share/bash-completion/bash_completion"
+[ -r "${BREWPATH}/etc/profile.d/bash_completion.sh" ] && . "${BREWPATH}/etc/profile.d/bash_completion.sh"
 
 # enable aws-cli completion
-[ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
-
-# enable hugo completion
-[[ -f "$HOME/.hugo/hugo.sh" ]] && . "$HOME/.hugo/hugo.sh"
+[ -f "${BREWPATH}/bin/aws_completer" ] && complete -C aws_completer aws
 
 # enable rvm completion
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+# shellcheck disable=2154
+[ -r "$rvm_path/scripts/completion" ] && . "$rvm_path/scripts/completion"
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
@@ -128,7 +97,11 @@ source /usr/local/opt/asdf/asdf.sh
 # complete -W "NSGlobalDomain" defaults
 
 # travis completion
-[ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
+[ -f "$HOME/.travis/travis.sh" ] && . "$HOME/.travis/travis.sh"
 
-# source nvm
-[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"
+##
+## Extra
+##
+
+# source extra last for overrides
+[ -r "${HOME}/.extra" ] && . "${HOME}/.extra"
