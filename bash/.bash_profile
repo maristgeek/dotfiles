@@ -67,9 +67,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # set up fzf keybindings
 [ -f "${HOME}/.fzf.bash" ] && . "${HOME}/.fzf.bash"
 
-# iTerm2 Shell Integration
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
 # asdf
 [ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && source "${BREWPATH}/opt/asdf/asdf.sh"
 
@@ -105,3 +102,6 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 # source extra last for overrides
 [ -r "${HOME}/.extra" ] && . "${HOME}/.extra"
+
+# iTerm2 Shell Integration - actually last for things like kube-ps1 and direnv
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
